@@ -8,8 +8,11 @@ import UserProfile from '@/components/user/UserProfile.vue';
 import UserMessages from '@/components/user/UserMessages.vue';
 import Home from './components/Home.vue';
 import Blog from './components/Blog.vue';
-import Products from './components/Products.vue';
-import ProductDetails from '@/components/ProductDetails.vue';
+import ProductsList from './components/product/ProductList.vue';
+// import ProductDetails from '@/components/ProductDetails.vue';
+import ProductForm from '@/components/product/ProductForm.vue';
+
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 Vue.config.productionTip = false;
@@ -29,10 +32,10 @@ const router = new VueRouter({
 			path:"/blog", 
 			component: Blog,
 			name:"blog" },
-		{ 
-			path: "/products/:id",
-			component: ProductDetails, 
-			name:"product-detail" },
+		// { 
+		// 	path: "/products/:id",
+		// 	component: ProductDetails, 
+		// 	name:"product-detail" },
 
 		{
 			path: "/user/:id", 
@@ -53,14 +56,20 @@ const router = new VueRouter({
 					path: "messages",
 					components: UserMessages,
 					name: 'messages'
-				}
+				},
 			]
 		},
 
 		{ 
 			path: "/products", 
-			component: Products, 
-			name:"products"}
+			component: ProductsList, 
+			name:"products" 
+		},
+		{	
+			path: "/products/new",
+			component: ProductForm
+
+		}
 	]
 })
 
