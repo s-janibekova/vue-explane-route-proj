@@ -11,9 +11,19 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 Vue.config.productionTip = false;
 
 //register vue-router
+Vue.use(VueRouter);
 
-//define routes for your application
+const router = new VueRouter({
+	mode: 'history',
+	base: __dirname,
+	routes: [
+		{ path: "/", component: Home, name: "home"},
+		{ path:"/blog", component: Blog, name:"blog" },
+		{ path: "/products", component: Products, name:"products"}
+	]
+})
 
 new Vue({
+	router,
 	render: h => h(App)
 }).$mount('#app');
