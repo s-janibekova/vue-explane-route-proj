@@ -5,7 +5,7 @@ import VueRouter from 'vue-router';
 import Home from './components/Home.vue';
 import Blog from './components/Blog.vue';
 import Products from './components/Products.vue';
-
+import ProductDetails from '@/components/ProductDetails.vue';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 Vue.config.productionTip = false;
@@ -19,6 +19,7 @@ const router = new VueRouter({
 	routes: [
 		{ path: "/", component: Home, name: "home"},
 		{ path:"/blog", component: Blog, name:"blog" },
+		{ path: "/products/:id", component: ProductDetails, name:"product-detail" },
 		{ path: "/products", component: Products, name:"products"}
 	]
 })
